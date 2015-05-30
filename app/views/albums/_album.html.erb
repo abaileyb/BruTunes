@@ -1,0 +1,14 @@
+<p>
+  <strong>Name:</strong>
+  <%= album.name %>
+</p>
+ 
+<p>
+  <strong>Year:</strong>
+  <%= album.year %>
+</p>
+<p>
+  <%= link_to 'Destroy Album', [album.artist, album],
+               method: :delete,
+               data: { confirm: 'Are you sure?' } %>
+</p>
