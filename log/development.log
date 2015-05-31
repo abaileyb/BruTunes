@@ -49,3 +49,20 @@ Migrating to CreateAlbums (20150530154937)
             FROM sqlite_temp_master
             WHERE name='index_albums_on_artist_id' AND type='index'
 [0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mSQL (1.3ms)[0m  DELETE FROM "artists"
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "artists" ("name", "bio", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["name", "Two Door Cinema Club"], ["bio", "Two Door Cinema Club are a Northern Irish indie rock band from Bangor, Donaghadee, County Down, formed in 2007. The band consists of Alex Trimble, Sam Halliday, and Kevin Baird."], ["created_at", "2015-05-31 19:50:06.804131"], ["updated_at", "2015-05-31 19:50:06.804131"]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "artists" ("name", "bio", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "The Killers"], ["bio", "The Killers are an American rock band formed in Las Vegas, Nevada in 2001, by Brandon Flowers and Dave Keuning. Mark Stoermer and Ronnie Vannucci Jr. would complete the current line-up of the band in 2002. The name The Killers is derived from a logo on the bass drum of a fictitious band, portrayed in the music video for the New Order song Crystal."], ["created_at", "2015-05-31 19:50:06.809616"], ["updated_at", "2015-05-31 19:50:06.809616"]]
+  [1m[35m (0.8ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "artists" ("name", "bio", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["name", "Walk The Moon"], ["bio", "Walk the Moon is an American Indie rock band based in Cincinnati, Ohio. Lead singer Nicholas Petricca started the band in 2008 and went through several member changes before finally coming together with current members Kevin Ray, Sean Waugaman, and Eli Maiman in 2010.[1] The band derives their name from the song Walking on the Moon by The Police."], ["created_at", "2015-05-31 19:50:06.812058"], ["updated_at", "2015-05-31 19:50:06.812058"]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "artists" ("name", "bio", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Zedd"], ["bio", "Anton Zaslavski, better known by his stage name Zedd, is a Russian-German musician, music producer and DJ."], ["created_at", "2015-05-31 19:50:06.814200"], ["updated_at", "2015-05-31 19:50:06.814200"]]
+  [1m[35m (0.7ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "artists" ("name", "bio", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["name", "Alesso"], ["bio", "Alessandro Lindblad, commonly known by his stage name Alesso, is a Swedish DJ and electronic dance music producer. He has worked with numerous EDM artists, including Avicii, OneRepublic, Calvin Harris, Usher, David Guetta, and Sebastian Ingrosso."], ["created_at", "2015-05-31 19:50:06.816279"], ["updated_at", "2015-05-31 19:50:06.816279"]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m

@@ -1,5 +1,20 @@
-<strong><h><%= @artist.name %></h></strong>
+<p>
+Name:
+<strong><%= @artist.name %></strong>
+</p>
+
 <p><%= @artist.bio %></p>
+
+<p>Album:
+<%= render @artist.albums %>
+</p>
+
+<!--  
+<p>Add a album:</h2>
+<%= render #'album/form' %> 
+we don't need this! -->
 
 
 <p><%= link_to 'All Artists', artists_path %></p>   <!-- #it doesn't take params -->  
+<p><%= link_to 'Edit', edit_artist_path(@artist) %></p> |
+<p><%= link_to 'Back', artists_path %></p>

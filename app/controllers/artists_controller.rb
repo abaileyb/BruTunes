@@ -18,8 +18,13 @@ def new
 
 	def create
 		@artist = Artist.new(artist_params)
+		if
 		@artist.save
 		redirect_to @artist
+		else
+		render 'new'
+		end
+		#if the artist is not saved because of some error, you want to recreate a thing
 		#render plain: params['artist'].inspect
 	end
 
