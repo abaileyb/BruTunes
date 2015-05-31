@@ -34,11 +34,8 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 group :development, :test do
 
-<<<<<<< HEAD
-	gem "pry-rails"
-=======
+
   gem 'pry-rails'
->>>>>>> 072363b3d638a5fee1d3dcd5f7151787fee02e9a
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
 

@@ -1,0 +1,27 @@
+<p>
+
+Name:
+
+<strong><%= @album.name %></strong>
+
+</p>
+
+<p><%= @album.year %></p>
+
+<p>Song:
+
+<%= render @album.songs %>
+
+</p>
+
+<!-- #add cover photo:
+
+<img = src> -->
+
+<p><%= link_to 'All Albums', albums_path %></p>   <!-- #it doesn't take params 
+
+-->  
+
+<p><%= link_to 'Edit', edit_album_path(@album) %></p> |
+
+<p><%= link_to 'Back', albums_path %></p>
