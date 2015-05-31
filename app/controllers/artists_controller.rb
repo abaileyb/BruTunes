@@ -1,5 +1,5 @@
 class ArtistsController < ApplicationController
-		def index
+	def index
 		@artists = Artist.all.order(:name)
 	end
 
@@ -8,12 +8,12 @@ class ArtistsController < ApplicationController
 		# id = params[:id]
 	end
 
-def new
+	def new
 		@artist = Artist.new
 	end
 
 	def edit
-    @artist = Artist.find params[:id]
+    	@artist = Artist.find params[:id]
 	end
 
 	def create
@@ -29,20 +29,22 @@ def new
 	end
 
 	def update
-  @artist = Artist.find params[:id]
+ 	 	@artist = Artist.find params[:id]
  
-  if @artist.update(artist_params)
-    redirect_to @artist
-  else
-    render 'edit'
-  end
-end
- def destroy
-    @artist = Artist.find params[:id]
-    @artist.destroy
+  		if @artist.update(artist_params)
+    		redirect_to @artist
+ 		else
+    		render 'edit'
+ 		end
+
+	end
  
-    redirect_to artists_path
-  end
+ 	def destroy
+   		@artist = Artist.find params[:id]
+    	@artist.destroy
+ 
+   		redirect_to artists_path
+  	end
 
   private
 	def artist_params

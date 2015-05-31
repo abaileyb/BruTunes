@@ -49,6 +49,7 @@ Migrating to CreateAlbums (20150530154937)
             FROM sqlite_temp_master
             WHERE name='index_albums_on_artist_id' AND type='index'
 [0m
+<<<<<<< HEAD
   [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
   [1m[35mSQL (1.3ms)[0m  DELETE FROM "artists"
   [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
@@ -66,3 +67,185 @@ Migrating to CreateAlbums (20150530154937)
   [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
   [1m[35mSQL (0.2ms)[0m  INSERT INTO "artists" ("name", "bio", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["name", "Alesso"], ["bio", "Alessandro Lindblad, commonly known by his stage name Alesso, is a Swedish DJ and electronic dance music producer. He has worked with numerous EDM artists, including Avicii, OneRepublic, Calvin Harris, Usher, David Guetta, and Sebastian Ingrosso."], ["created_at", "2015-05-31 19:50:06.816279"], ["updated_at", "2015-05-31 19:50:06.816279"]]
   [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+=======
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateSongs (20150531151354)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.5ms)[0m  [1mCREATE TABLE "songs" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "time" integer, "likes" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20150531151354"]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_albums_on_artist_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_albums_on_artist_id' AND type='index'
+[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to CreateSongs (20150531151354)
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (1.0ms)[0m  DROP TABLE "songs"
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = ?[0m  [["version", "20150531151354"]]
+  [1m[35m (0.7ms)[0m  commit transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_albums_on_artist_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_albums_on_artist_id' AND type='index'
+
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateSongs (20150531151929)
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.3ms)[0m  [1mCREATE TABLE "songs" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "time" integer, "likes" integer, "album_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (0.0ms)[0m  select sqlite_version(*)
+  [1m[36m (0.1ms)[0m  [1mCREATE  INDEX "index_songs_on_album_id" ON "songs" ("album_id")[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20150531151929"]]
+  [1m[36m (1.1ms)[0m  [1mcommit transaction[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_albums_on_artist_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_albums_on_artist_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_songs_on_album_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_songs_on_album_id' AND type='index'
+
+
+
+Started GET "/" for ::1 at 2015-05-31 19:29:16 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendered /Users/Pavi/.rvm/gems/ruby-2.2.1/gems/railties-4.2.1/lib/rails/templates/rails/welcome/index.html.erb (1.9ms)
+Completed 200 OK in 19ms (Views: 10.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/artists" for ::1 at 2015-05-31 19:29:39 +0200
+Processing by ArtistsController#index as HTML
+  [1m[35mArtist Load (0.5ms)[0m  SELECT "artists".* FROM "artists"  ORDER BY "artists"."name" ASC
+  Rendered artists/index.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 1690ms (Views: 1679.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/artists.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-05-31 19:29:41 +0200
+
+
+Started GET "/assets/albums.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-05-31 19:29:41 +0200
+
+
+Started GET "/assets/albums.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-05-31 19:29:41 +0200
+
+
+Started GET "/assets/artists.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-05-31 19:29:41 +0200
+
+
+Started GET "/artists/new" for ::1 at 2015-05-31 20:00:42 +0200
+Processing by ArtistsController#new as HTML
+  Rendered artists/_form.html.erb (30.4ms)
+  Rendered artists/new.html.erb within layouts/application (43.4ms)
+Completed 200 OK in 101ms (Views: 90.1ms | ActiveRecord: 0.3ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mSQL (1.9ms)[0m  DELETE FROM "artists"
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.8ms)[0m  INSERT INTO "artists" ("name", "bio", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["name", "Two Door Cinema Club"], ["bio", "Two Door Cinema Club are a Northern Irish indie rock band from Bangor, Donaghadee, County Down, formed in 2007. The band consists of Alex Trimble, Sam Halliday, and Kevin Baird."], ["created_at", "2015-05-31 18:21:01.692355"], ["updated_at", "2015-05-31 18:21:01.692355"]]
+  [1m[36m (0.9ms)[0m  [1mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mSQL (9.2ms)[0m  DELETE FROM "artists"
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "artists" ("name", "bio", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["name", "Two Door Cinema Club"], ["bio", "Two Door Cinema Club are a Northern Irish indie rock band from Bangor, Donaghadee, County Down, formed in 2007. The band consists of Alex Trimble, Sam Halliday, and Kevin Baird."], ["created_at", "2015-05-31 18:21:37.467705"], ["updated_at", "2015-05-31 18:21:37.467705"]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "artists" ("name", "bio", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "The Killers"], ["bio", "The Killers are an American rock band formed in Las Vegas, Nevada in 2001, by Brandon Flowers and Dave Keuning. Mark Stoermer and Ronnie Vannucci Jr. would complete the current line-up of the band in 2002. The name The Killers is derived from a logo on the bass drum of a fictitious band, portrayed in the music video for the New Order song Crystal."], ["created_at", "2015-05-31 18:21:37.472423"], ["updated_at", "2015-05-31 18:21:37.472423"]]
+  [1m[35m (0.7ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "artists" ("name", "bio", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["name", "Walk The Moon"], ["bio", "Walk the Moon is an American Indie rock band based in Cincinnati, Ohio. Lead singer Nicholas Petricca started the band in 2008 and went through several member changes before finally coming together with current members Kevin Ray, Sean Waugaman, and Eli Maiman in 2010.[1] The band derives their name from the song Walking on the Moon by The Police."], ["created_at", "2015-05-31 18:21:37.474781"], ["updated_at", "2015-05-31 18:21:37.474781"]]
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "artists" ("name", "bio", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Zedd"], ["bio", "Anton Zaslavski, better known by his stage name Zedd, is a Russian-German musician, music producer and DJ."], ["created_at", "2015-05-31 18:21:37.476778"], ["updated_at", "2015-05-31 18:21:37.476778"]]
+  [1m[35m (0.9ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "artists" ("name", "bio", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["name", "Alesso"], ["bio", "Alessandro Lindblad, commonly known by his stage name Alesso, is a Swedish DJ and electronic dance music producer. He has worked with numerous EDM artists, including Avicii, OneRepublic, Calvin Harris, Usher, David Guetta, and Sebastian Ingrosso."], ["created_at", "2015-05-31 18:21:37.478974"], ["updated_at", "2015-05-31 18:21:37.478974"]]
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+  [1m[36mArtist Load (1.6ms)[0m  [1mSELECT "artists".* FROM "artists"[0m
+  [1m[36mArtist Load (2.8ms)[0m  [1mSELECT "artists".* FROM "artists"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mSQL (0.9ms)[0m  DELETE FROM "artists"
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "artists" ("name", "bio", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["name", "Two Door Cinema Club"], ["bio", "Two Door Cinema Club are a Northern Irish indie rock band from Bangor, Donaghadee, County Down, formed in 2007. The band consists of Alex Trimble, Sam Halliday, and Kevin Baird."], ["created_at", "2015-05-31 18:24:09.769023"], ["updated_at", "2015-05-31 18:24:09.769023"]]
+  [1m[36m (0.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "artists" ("name", "bio", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "The Killers"], ["bio", "The Killers are an American rock band formed in Las Vegas, Nevada in 2001, by Brandon Flowers and Dave Keuning. Mark Stoermer and Ronnie Vannucci Jr. would complete the current line-up of the band in 2002. The name The Killers is derived from a logo on the bass drum of a fictitious band, portrayed in the music video for the New Order song Crystal."], ["created_at", "2015-05-31 18:24:09.773694"], ["updated_at", "2015-05-31 18:24:09.773694"]]
+  [1m[35m (0.7ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "artists" ("name", "bio", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["name", "Walk The Moon"], ["bio", "Walk the Moon is an American Indie rock band based in Cincinnati, Ohio. Lead singer Nicholas Petricca started the band in 2008 and went through several member changes before finally coming together with current members Kevin Ray, Sean Waugaman, and Eli Maiman in 2010.[1] The band derives their name from the song Walking on the Moon by The Police."], ["created_at", "2015-05-31 18:24:09.775923"], ["updated_at", "2015-05-31 18:24:09.775923"]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "artists" ("name", "bio", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Zedd"], ["bio", "Anton Zaslavski, better known by his stage name Zedd, is a Russian-German musician, music producer and DJ."], ["created_at", "2015-05-31 18:24:09.778066"], ["updated_at", "2015-05-31 18:24:09.778066"]]
+  [1m[35m (0.7ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "artists" ("name", "bio", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["name", "Alesso"], ["bio", "Alessandro Lindblad, commonly known by his stage name Alesso, is a Swedish DJ and electronic dance music producer. He has worked with numerous EDM artists, including Avicii, OneRepublic, Calvin Harris, Usher, David Guetta, and Sebastian Ingrosso."], ["created_at", "2015-05-31 18:24:09.780327"], ["updated_at", "2015-05-31 18:24:09.780327"]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[36mArtist Load (1.6ms)[0m  [1mSELECT "artists".* FROM "artists"[0m
+
+
+Started GET "/artists/new" for ::1 at 2015-05-31 20:31:55 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ArtistsController#new as HTML
+  Rendered artists/_form.html.erb (28.9ms)
+  Rendered artists/new.html.erb within layouts/application (36.2ms)
+Completed 200 OK in 315ms (Views: 288.2ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/albums.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-05-31 20:31:56 +0200
+
+
+Started GET "/assets/artists.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-05-31 20:31:56 +0200
+
+
+Started GET "/assets/welcome.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-05-31 20:31:56 +0200
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2015-05-31 20:31:56 +0200
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-05-31 20:31:56 +0200
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for ::1 at 2015-05-31 20:31:56 +0200
+
+
+Started GET "/assets/albums.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-05-31 20:31:56 +0200
+
+
+Started GET "/assets/welcome.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-05-31 20:31:56 +0200
+
+
+Started GET "/assets/artists.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-05-31 20:31:56 +0200
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-05-31 20:31:56 +0200
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-05-31 20:31:56 +0200
+
+
+Started GET "/artists/" for ::1 at 2015-05-31 20:31:58 +0200
+Processing by ArtistsController#index as HTML
+  [1m[35mArtist Load (0.2ms)[0m  SELECT "artists".* FROM "artists"  ORDER BY "artists"."name" ASC
+  Rendered artists/index.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 58ms (Views: 57.3ms | ActiveRecord: 0.2ms)
+>>>>>>> 072363b3d638a5fee1d3dcd5f7151787fee02e9a
