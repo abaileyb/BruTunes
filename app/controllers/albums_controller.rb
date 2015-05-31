@@ -11,11 +11,10 @@ class AlbumsController < ApplicationController
    		@album = @artist.albums.find(params[:id])
     	@album.destroy
     	redirect_to artist_path(@artist)
-  	end 
+  	end
 
   private
     def album_params
       params.require(:album).permit(:name, :year, :artist_id, :cover_photo)
     end
-
 end
