@@ -5,7 +5,6 @@ class ArtistsController < ApplicationController
 
 	def show
 		@artist = Artist.find params[:id]
-		# id = params[:id]
 	end
 
 	def new
@@ -18,21 +17,17 @@ class ArtistsController < ApplicationController
 
 	def create
 		@artist = Artist.new(artist_params)
-		if
-		@artist.save
-		redirect_to @artist
+		if @artist.save
+			redirect_to artist_path
 		else
-		render 'new'
+			render 'new'
 		end
-		#if the artist is not saved because of some error, you want to recreate a thing
-		#render plain: params['artist'].inspect
 	end
 
 	def update
  	 	@artist = Artist.find params[:id]
- 
   		if @artist.update(artist_params)
-    		redirect_to @artist
+    		redirect_to artist_path
  		else
     		render 'edit'
  		end
@@ -42,7 +37,6 @@ class ArtistsController < ApplicationController
  	def destroy
    		@artist = Artist.find params[:id]
     	@artist.destroy
- 
    		redirect_to artists_path
   	end
 

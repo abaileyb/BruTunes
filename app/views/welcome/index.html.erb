@@ -21,7 +21,7 @@
 	<div>
 		<strong><%= link_to album.name, album_path(album)%></strong>
 		<p><%= link_to 'Edit', edit_album_path(album)%></p>
-		<p><%= link_to 'Destroy', artist_path(album),
+		<p><%= link_to 'Destroy', album_path(album),
 			method: :delete, data: { confirm: "Seriously?" } %></p>
 	</div>
 <% end %>
