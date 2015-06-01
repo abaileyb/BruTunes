@@ -16,7 +16,7 @@ class AlbumsController < ApplicationController
 	    @artist = Artist.find(params[:artist_id])
 	    @album = @artist.albums.create(album_params)
 		if @album.save
-		   redirect_to album_path
+			redirect_to album_path
 		   # if anything went wrong, if may be caused by 'album_path'
 		else
 			render 'new'
@@ -24,7 +24,7 @@ class AlbumsController < ApplicationController
     end
  
 	def edit
-	    @artist = Artist.find(params[:artist_id])
+		@artist = Artist.find(params[:artist_id])
 	    @album = @artist.albums.find(params[:id])
 	end
 
@@ -32,9 +32,9 @@ class AlbumsController < ApplicationController
 		@artist = Artist.find(params[:artist_id])
 	    @album = @artist.albums.create(album_params)
 		if @album.save
-		   redirect_to album_path
+			redirect_to album_path
 		else
-		   render 'edit'
+			render 'edit'
 		end
  	end
 

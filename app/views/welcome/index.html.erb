@@ -1,6 +1,6 @@
 <h1>Welcome to BruTunes!!</h1>
 
-<h1>Top Five Artists!</h1>
+<h1>Top Five <%= link_to 'Artists', artists_path(@artists) %>!</h1>
 	
 <% @artists.each do |artist| %>
 	
