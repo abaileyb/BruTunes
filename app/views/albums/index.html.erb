@@ -1,12 +1,10 @@
-<h1>Top Five Albums </h1>
-<!--
+<h1>Albums!</h1>
+
 <% @albums.each do |album| %>
 	<div>
-		<strong>%= link_to album.name, album_path(album)</strong>
-		<p><%= link_to 'Edit', edit_album_path(album)%></p>
-		<p><%= link_to 'Destroy', artist_path(album),
-			method: :delete, data: { confirm: "Seriously?" } %></p>
+		<p>
+		<strong><%= link_to album.name, album_path(album)  %> </strong> <%= album.year%> 
+		</p>
+
 	</div>
 <% end %>
-
--->

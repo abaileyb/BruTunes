@@ -9,20 +9,27 @@
 		
 		<strong><%= link_to artist.name, artist_path(artist) %></strong>
 		<p> <%= artist.bio %></p>
-		<p><%= link_to 'Edit', edit_artist_path(artist) %>
-		<p><%= link_to 'Destroy', artist_path(artist),
-			    method: :delete, data:{ confirm: "Seriously?" } %></p>
+	
+		
 	</div>
 
 <% end %>
 
-<h1>Top Five Albums </h1>
+<h1>Top Five <%= link_to 'Albums', albums_path(@albums) %>!</h1>
 <% @albums.each do |album| %>
 	<div>
 		<strong><%= link_to album.name, album_path(album)%></strong>
-		<p><%= link_to 'Edit', edit_album_path(album)%></p>
-		<p><%= link_to 'Destroy', album_path(album),
-			method: :delete, data: { confirm: "Seriously?" } %></p>
+		
 	</div>
 <% end %>
+
+
+<h1>Top Five <%= link_to 'Songs', songs_path(@songs) %>!</h1>
+<% @songs.each do |song| %>
+	<div>
+		<strong><%= link_to song.name, song_path(song)%></strong>
+		
+	</div>
+<% end %>
+
 

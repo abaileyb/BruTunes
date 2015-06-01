@@ -18,7 +18,7 @@ class ArtistsController < ApplicationController
 	def create
 		@artist = Artist.new(artist_params)
 		if @artist.save
-			redirect_to artist_path
+			redirect_to artist_path(@artist)
 		else
 			render 'new'
 		end
@@ -27,7 +27,7 @@ class ArtistsController < ApplicationController
 	def update
  	 	@artist = Artist.find params[:id]
   		if @artist.update(artist_params)
-    		redirect_to artist_path
+    		redirect_to artist_path(@artist)
  		else
     		render 'edit'
  		end
@@ -39,6 +39,14 @@ class ArtistsController < ApplicationController
     	@artist.destroy
    		redirect_to artists_path
   	end
+
+
+	def like
+		@artist = Artist.find(params[:id])
+		@artist.liked!
+		redirect_to @artist
+	end
+
 
   private
 	def artist_params

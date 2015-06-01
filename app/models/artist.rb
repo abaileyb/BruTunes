@@ -4,4 +4,10 @@ class Artist < ActiveRecord::Base
 
 	
 	validates :name, presence: true
+
+	def liked!
+		num = self.likes
+		num += 1
+		self.update likes: num
+	end
 end
