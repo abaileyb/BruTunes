@@ -4851,3 +4851,222 @@ Processing by ArtistsController#index as
   [1m[35mArtist Load (0.1ms)[0m  SELECT "artists".* FROM "artists"  ORDER BY "artists"."name" ASC
   Rendered artists/index.html.erb within layouts/application (1.3ms)
 Completed 200 OK in 34ms (Views: 33.6ms | ActiveRecord: 0.1ms)
+
+
+Started DELETE "/artists/19" for ::1 at 2015-06-01 21:29:55 +0200
+Processing by ArtistsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"Hdr9wx/l5+Kt3qVU8JHVtkZVueiqDQTLfxhI/XW99B6MkcVBAXBInrIoEet1Q5H2O2L9hMhHc6QwTShCXRUSHQ==", "id"=>"19"}
+  [1m[36mArtist Load (0.1ms)[0m  [1mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1[0m  [["id", 19]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM "artists" WHERE "artists"."id" = ?[0m  [["id", 19]]
+  [1m[35m (1.1ms)[0m  commit transaction
+Redirected to http://localhost:3000/artists
+Completed 302 Found in 3ms (ActiveRecord: 1.4ms)
+
+
+Started GET "/artists" for ::1 at 2015-06-01 21:29:55 +0200
+Processing by ArtistsController#index as HTML
+  [1m[36mArtist Load (0.1ms)[0m  [1mSELECT "artists".* FROM "artists"  ORDER BY "artists"."name" ASC[0m
+  Rendered artists/index.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 29ms (Views: 28.7ms | ActiveRecord: 0.1ms)
+
+
+Started DELETE "/artists/18" for ::1 at 2015-06-01 21:29:58 +0200
+Processing by ArtistsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"9hD86OYOWrsdHILKwOV8OZWIHuVqkaQe2ZA9UZQLBs1nW8Rq+Jv1xwLqNnVFNzh56L9aiQjb03GWxV3uvKPgzg==", "id"=>"18"}
+  [1m[35mArtist Load (0.1ms)[0m  SELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1  [["id", 18]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM "artists" WHERE "artists"."id" = ?  [["id", 18]]
+  [1m[36m (1.0ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/artists
+Completed 302 Found in 3ms (ActiveRecord: 1.3ms)
+
+
+Started GET "/artists" for ::1 at 2015-06-01 21:29:58 +0200
+Processing by ArtistsController#index as HTML
+  [1m[35mArtist Load (0.2ms)[0m  SELECT "artists".* FROM "artists"  ORDER BY "artists"."name" ASC
+  Rendered artists/index.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 28ms (Views: 27.0ms | ActiveRecord: 0.2ms)
+
+
+Started DELETE "/artists/16" for ::1 at 2015-06-01 21:30:00 +0200
+Processing by ArtistsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"SACG9ijR2u0kq9YdYrwgv58HqxeTBhC7sZc2vm512hHZS750NkR1kTtdYqLnbmT/4jDve/FMZ9T+wlYBRt08Eg==", "id"=>"16"}
+  [1m[36mArtist Load (0.1ms)[0m  [1mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1[0m  [["id", 16]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM "artists" WHERE "artists"."id" = ?[0m  [["id", 16]]
+  [1m[35m (1.0ms)[0m  commit transaction
+Redirected to http://localhost:3000/artists
+Completed 302 Found in 3ms (ActiveRecord: 1.3ms)
+
+
+Started GET "/artists" for ::1 at 2015-06-01 21:30:00 +0200
+Processing by ArtistsController#index as HTML
+  [1m[36mArtist Load (0.2ms)[0m  [1mSELECT "artists".* FROM "artists"  ORDER BY "artists"."name" ASC[0m
+  Rendered artists/index.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 28ms (Views: 26.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/welcome" for ::1 at 2015-06-01 21:31:26 +0200
+Processing by WelcomeController#index as HTML
+  [1m[35mArtist Load (0.1ms)[0m  SELECT "artists".* FROM "artists"  ORDER BY "artists"."name" ASC
+  [1m[36mAlbum Load (0.1ms)[0m  [1mSELECT "albums".* FROM "albums"  ORDER BY "albums"."name" ASC[0m
+  Rendered welcome/index.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 35ms (Views: 34.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/artists/17" for ::1 at 2015-06-01 21:33:23 +0200
+Processing by ArtistsController#show as HTML
+  Parameters: {"id"=>"17"}
+  [1m[35mArtist Load (0.1ms)[0m  SELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1  [["id", 17]]
+  [1m[36mAlbum Load (0.1ms)[0m  [1mSELECT "albums".* FROM "albums" WHERE "albums"."artist_id" = ?[0m  [["artist_id", 17]]
+  Rendered collection (0.0ms)
+  Rendered artists/show.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 32ms (Views: 31.0ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/welcome" for ::1 at 2015-06-01 21:35:48 +0200
+Processing by WelcomeController#index as HTML
+  [1m[35mArtist Load (0.1ms)[0m  SELECT "artists".* FROM "artists"  ORDER BY "artists"."name" ASC
+  [1m[36mAlbum Load (0.2ms)[0m  [1mSELECT "albums".* FROM "albums"  ORDER BY "albums"."name" ASC[0m
+  Rendered welcome/index.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 26ms (Views: 25.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/albums/1" for ::1 at 2015-06-01 21:35:49 +0200
+
+SyntaxError (/Users/baileyberro/Documents/BruTunes/app/controllers/albums_controller.rb:52: syntax error, unexpected end-of-input, expecting keyword_end):
+  app/controllers/albums_controller.rb:52: syntax error, unexpected end-of-input, expecting keyword_end
+
+
+  Rendered /Users/baileyberro/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.4ms)
+  Rendered /Users/baileyberro/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.4ms)
+  Rendered /Users/baileyberro/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/baileyberro/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (39.8ms)
+  Rendered /Users/baileyberro/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.2ms)
+  Rendered /Users/baileyberro/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/baileyberro/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/baileyberro/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/baileyberro/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (29.5ms)
+  Rendered /Users/baileyberro/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendered /Users/baileyberro/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/baileyberro/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (72.2ms)
+
+
+Started GET "/albums/1" for ::1 at 2015-06-01 21:35:50 +0200
+
+SyntaxError (/Users/baileyberro/Documents/BruTunes/app/controllers/albums_controller.rb:52: syntax error, unexpected end-of-input, expecting keyword_end):
+  app/controllers/albums_controller.rb:52: syntax error, unexpected end-of-input, expecting keyword_end
+
+
+  Rendered /Users/baileyberro/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (2.7ms)
+  Rendered /Users/baileyberro/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.4ms)
+  Rendered /Users/baileyberro/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/baileyberro/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (36.2ms)
+  Rendered /Users/baileyberro/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.2ms)
+  Rendered /Users/baileyberro/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/baileyberro/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/baileyberro/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/baileyberro/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (43.0ms)
+  Rendered /Users/baileyberro/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendered /Users/baileyberro/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/baileyberro/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (83.8ms)
+  [1m[36mAlbum Load (1.5ms)[0m  [1mSELECT "albums".* FROM "albums"[0m
+  [1m[35mArtist Load (0.1ms)[0m  SELECT "artists".* FROM "artists"
+
+
+Started GET "/artists/20" for ::1 at 2015-06-01 22:40:10 +0200
+Processing by ArtistsController#show as HTML
+  Parameters: {"id"=>"20"}
+  [1m[35mArtist Load (0.1ms)[0m  SELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1  [["id", 20]]
+  [1m[36mAlbum Load (0.1ms)[0m  [1mSELECT "albums".* FROM "albums" WHERE "albums"."artist_id" = ?[0m  [["artist_id", 20]]
+  Rendered collection (0.0ms)
+  Rendered artists/show.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 32ms (Views: 30.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/welcome" for ::1 at 2015-06-01 22:45:44 +0200
+Processing by WelcomeController#index as HTML
+  [1m[35mArtist Load (0.2ms)[0m  SELECT "artists".* FROM "artists"  ORDER BY "artists"."name" ASC
+  [1m[36mAlbum Load (0.1ms)[0m  [1mSELECT "albums".* FROM "albums"  ORDER BY "albums"."name" ASC[0m
+  Rendered welcome/index.html.erb within layouts/application (7.3ms)
+Completed 200 OK in 37ms (Views: 32.6ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/albums/1" for ::1 at 2015-06-01 22:45:45 +0200
+Processing by AlbumsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mAlbum Load (0.2ms)[0m  SELECT  "albums".* FROM "albums" WHERE "albums"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mSong Load (0.1ms)[0m  [1mSELECT "songs".* FROM "songs" WHERE "songs"."album_id" = ?[0m  [["album_id", 1]]
+  Rendered collection (0.0ms)
+  Rendered albums/show.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 32ms (Views: 30.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/albums/1/edit" for ::1 at 2015-06-01 22:45:47 +0200
+Processing by AlbumsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mAlbum Load (0.1ms)[0m  SELECT  "albums".* FROM "albums" WHERE "albums"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered albums/_form.html.erb (2.5ms)
+  Rendered albums/edit.html.erb within layouts/application (4.2ms)
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.1ms)
+
+ActionView::Template::Error (undefined method `albums' for nil:NilClass):
+    1: <%= form_for([@artist, @artist.albums.build]) do |f| %>
+    2:   <% if @artist.album.errors.any? %>
+    3:   <h2>
+    4:   <%= pluralize(@artist.album.errors.count, "error") %>
+  app/views/albums/_form.html.erb:1:in `_app_views_albums__form_html_erb__4092572953627658315_70097865614840'
+  app/views/albums/edit.html.erb:2:in `_app_views_albums_edit_html_erb__132804679268041441_70097865733400'
+
+
+  Rendered /Users/baileyberro/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.0ms)
+  Rendered /Users/baileyberro/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.7ms)
+  Rendered /Users/baileyberro/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/baileyberro/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (44.2ms)
+  Rendered /Users/baileyberro/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /Users/baileyberro/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/baileyberro/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/baileyberro/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/baileyberro/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (30.7ms)
+  Rendered /Users/baileyberro/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendered /Users/baileyberro/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/baileyberro/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (76.7ms)
+
+
+Started GET "/albums/1/edit" for ::1 at 2015-06-01 22:45:47 +0200
+Processing by AlbumsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mAlbum Load (0.1ms)[0m  [1mSELECT  "albums".* FROM "albums" WHERE "albums"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered albums/_form.html.erb (2.0ms)
+  Rendered albums/edit.html.erb within layouts/application (3.1ms)
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.1ms)
+
+ActionView::Template::Error (undefined method `albums' for nil:NilClass):
+    1: <%= form_for([@artist, @artist.albums.build]) do |f| %>
+    2:   <% if @artist.album.errors.any? %>
+    3:   <h2>
+    4:   <%= pluralize(@artist.album.errors.count, "error") %>
+  app/views/albums/_form.html.erb:1:in `_app_views_albums__form_html_erb__4092572953627658315_70097852895300'
+  app/views/albums/edit.html.erb:2:in `_app_views_albums_edit_html_erb__132804679268041441_70097852943660'
+
+
+  Rendered /Users/baileyberro/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.9ms)
+  Rendered /Users/baileyberro/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.9ms)
+  Rendered /Users/baileyberro/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /Users/baileyberro/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (48.4ms)
+  Rendered /Users/baileyberro/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.2ms)
+  Rendered /Users/baileyberro/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/baileyberro/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/baileyberro/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/baileyberro/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (39.9ms)
+  Rendered /Users/baileyberro/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/baileyberro/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/baileyberro/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (80.4ms)
+
+
+Started GET "/albums" for ::1 at 2015-06-01 22:45:55 +0200
+Processing by AlbumsController#index as HTML
+  [1m[35mAlbum Load (0.2ms)[0m  SELECT "albums".* FROM "albums"  ORDER BY "albums"."name" ASC
+  Rendered albums/index.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 30ms (Views: 29.4ms | ActiveRecord: 0.2ms)
