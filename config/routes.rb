@@ -2,7 +2,6 @@ Rails.application.routes.draw do
   
 resources :welcome
 
-  resources :artists
   resources :artists do 
     resources :albums
   end
@@ -10,6 +9,7 @@ resources :welcome
   resources :albums do
     resources :songs
   end
+  
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
