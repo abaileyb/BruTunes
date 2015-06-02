@@ -8,46 +8,51 @@ class AlbumsController < ApplicationController
 	end
 
 	def new
+		@album = Album.new
 		@artist = Artist.find(params[:artist_id])
-    	@album = @artist.albums.new(album_params)
 	end
 
 	def create
 		@artist = Artist.find(params[:artist_id])
+
 		@album = @artist.albums.create(album_params)
 		if @album.save
-		   redirect_to album_path
-		   # if anything went wrong, if may be caused by 'album_path'
+			redirect_to album_path(@album)
+            # if anything went wrong, if may be caused by 'album_path'
 		else
 			render 'new'
 		end
-    end
- 
+	end
+
 	def edit
-		@artist = Artist.find(params[:artist_id])
-		@album = @artist.albums.find(params[:id])
+		@album = Album.find(params[:id])
+		@artist = Artist.find(@album.artist_id)
 	end
 
 	def update
-		@artist = Artist.find(params[:artist_id])
-		@album = @artist.albums.create(album_params)
+		@album = Album.find(params[:id])
+		@artist = Artist.find(@album.artist_id)
 		if @album.save
-			redirect_to albums_path
+        	redirect_to artist_album_path
 		else
-			render 'edit'
+        	render 'edit'
 		end
 	end
-	
-	def destroy
-		@artist = Artist.find(params[:artist_id])
-		@album = @artist.albums.find(params[:id])
+
+    def destroy
+    	@album = Album.find(params[:id])
 		@album.destroy
-		redirect_to albums_path
+ 		redirect_to albums_path
+    end
+
+    def like
+		@album = Album.find(params[:id])
+		@album.liked!
+		redirect_to @album
 	end
 
-	private
-	def album_params
-		params.require(:album).permit(:name, :year, :artist_id, :cover_photo)
-	end
+    private
+    	def album_params
+			params.require(:album).permit(:name, :year, :artist_id, :cover_photo)
+		end
 end
-

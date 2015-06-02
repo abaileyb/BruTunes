@@ -1,28 +1,77 @@
-<h1>Welcome to BruTunes!!</h1>
+<head>
+	<title>BruTunes</title>
+	<link href='https://fonts.googleapis.com/css?family=Lobster+Two' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Cabin' rel='stylesheet' type='text/css'>
+</head>
+<style>
 
-<h1>Top Five Artists!</h1>
-	
+h1 {
+	color: rgb(51, 204, 255);
+	font-family: 'Lobster Two', cursive;
+	font-size: 75px;
+	text-align: center;
+	margin-bottom: -5px;
+}
+
+h2 {
+	color: rgb(51, 204, 255);
+	font-family: 'Lobster Two', cursive;
+	text-align: center;
+	font-size: 36px;
+}
+
+.section {
+	font-family: 'Cabin', sans-serif;
+	font-size: 18px;
+	float: left;
+	display: inline-block;
+	width: 33%;
+}
+
+.content {
+	background: rgba(0, 51, 204, .5);
+	border-radius: 10px;
+	margin: 5px;
+	padding: 10px 0px 0px 10px;
+}
+
+</style>
+
+<body>
+<h1>BruTunes</h1>
+
+<div class="section">
+<h2>Top Five <%= link_to 'Artists', artists_path(@artists) %></h2>
 <% @artists.each do |artist| %>
-	
-	<div>
-		
-		
-		<strong><%= link_to artist.name, artist_path(artist) %></strong>
-		<p> <%= artist.bio %></p>
-		<p><%= link_to 'Edit', edit_artist_path(artist) %>
-		<p><%= link_to 'Destroy', artist_path(artist),
-			    method: :delete, data:{ confirm: "Seriously?" } %></p>
+
+	<div class="content">
+		<strong><%= link_to artist.name, artist_path(artist) %></strong><br><br><br>
 	</div>
 
 <% end %>
+</div>
 
-<h1>Top Five Albums </h1>
+<div class="section">
+<h2>Top Five <%= link_to 'Albums', albums_path(@albums) %></h2>
 <% @albums.each do |album| %>
-	<div>
-		<strong><%= link_to album.name, album_path(album)%></strong>
-		<p><%= link_to 'Edit', edit_album_path(album)%></p>
-		<p><%= link_to 'Destroy', album_path(album),
-			method: :delete, data: { confirm: "Seriously?" } %></p>
+
+	<div class="content">
+		<strong><%= link_to album.name, album_path(album)%></strong><br><br><br>
 	</div>
+
 <% end %>
+</div>
+
+<div class="section">
+<h2>Top Five <%= link_to 'Songs', songs_path(@songs) %></h2>
+<% @songs.each do |song| %>
+
+	<div class="content">
+		<strong><%= link_to song.name, song_path(song)%></strong><br><br><br>
+	</div>
+
+<% end %>
+</div>
+</body>
+
 

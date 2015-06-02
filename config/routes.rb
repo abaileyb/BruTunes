@@ -1,7 +1,12 @@
 Rails.application.routes.draw do
+
+get '/artists/:id/like' => 'artists#like', as: :like_artist
+get '/albums/:id/like' => 'albums#like', as: :like_album
+get '/songs/:id/like' => 'songs#like', as: :like_song
   
 resources :welcome
 
+  resources :artists
   resources :artists do 
     resources :albums
   end
@@ -9,12 +14,13 @@ resources :welcome
   resources :albums do
     resources :songs
   end
-  
+
+  resources :songs
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  # root 'welcome#index'
+  root 'welcome#index'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

@@ -1,15 +1,5 @@
 <%= form_for([@artist, @artist.albums.build]) do |f| %>
-  <% if @artist.album.errors.any? %>
-  <h2>
-  <%= pluralize(@artist.album.errors.count, "error") %>
-  prohibited this album from being saved
-  </h2>
-  <ul>
-  <% @artist.album.errors.full_messages.each do |msg| %>
-  <li> <%= msg %></li>
-  <% end %>
-  </ul>
-  <% end %>
+
 
   <p>
     <%= f.label :name %><br>
