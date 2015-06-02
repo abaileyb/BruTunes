@@ -12,6 +12,12 @@ h1 {
 	text-align: center
 }
 
+h2 {
+	font-family: 'Cabin', sans-serif;
+	font-size: 20px;
+	text-align: center
+}
+
 div {
 	background: rgba(0, 51, 204, .5);
 	border-radius: 10px;
@@ -27,6 +33,7 @@ p {
 </style>
 
 <h1>All Songs</h1>
+<h2> <%= link_to 'Home', welcome_index_path %> </h2>
 
 <% @songs.each do |song| %>
 	<div>

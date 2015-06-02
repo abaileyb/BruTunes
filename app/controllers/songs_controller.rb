@@ -27,11 +27,15 @@ class SongsController < ApplicationController
 
 
 	def edit
-		@song = Song.find(params[:id])
+		@album = Album.find(params[:album_id])
+		@song = @album.songs.find(params[:id])
 	end
 
 	def update
+		
 		@song = Song.find(params[:id])
+		@album = Album.find(@song.album_id)
+
 		if @song.save
         	redirect_to album_song_path
 		else

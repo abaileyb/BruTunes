@@ -1,20 +1,12 @@
 <style>
-
-h2{
-	color: blue;
-}
-
+	h2{
+		color: blue;
+	}
 </style>
 
 <div>
-<p>
-  <strong><%= album.name %></strong><br>
-  <%= album.year %>
-</p>
-
-<p>
-  <%= link_to 'Destroy Album', [album.artist, album],
-               method: :delete,
-               data: { confirm: 'Are you sure?' } %>
-</p>
+	<p>
+  		<strong><%= link_to album.name, album_path(album) %></strong><br>
+  		<%= album.year %>
+	</p>
 </div>

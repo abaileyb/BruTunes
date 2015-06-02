@@ -35,6 +35,11 @@ h2 {
 	padding: 10px 0px 0px 10px;
 }
 
+p {
+	font-size: 12px;
+	color: white;
+}
+
 </style>
 
 <body>
@@ -42,33 +47,47 @@ h2 {
 
 <div class="section">
 <h2>Top Five <%= link_to 'Artists', artists_path(@artists) %></h2>
-<% @artists.each do |artist| %>
-
-	<div class="content">
-		<strong><%= link_to artist.name, artist_path(artist) %></strong><br><br><br>
-	</div>
-
+<% count = 0 %>
+<% @artists.size > 5 ? max = 5 : max = @artists.size %>
+<% while count < max %>
+	<% artist = @artists[count] %>
+		<div class="content">
+			<strong><%= link_to artist.name, artist_path(artist) %></strong>
+			<p>	Likes: <%=artist.likes %></p>
+			<br>
+		</div>
+	<% count += 1 %>
 <% end %>
 </div>
 
 <div class="section">
 <h2>Top Five <%= link_to 'Albums', albums_path(@albums) %></h2>
-<% @albums.each do |album| %>
-
+<% count = 0 %>
+<% @albums.size > 5 ? max = 5 : max = @albums.size %>
+<% while count < max %>
+	<% album = @albums[count] %>
 	<div class="content">
-		<strong><%= link_to album.name, album_path(album)%></strong><br><br><br>
+		<strong><%= link_to album.name, album_path(album)%></strong>
+		<p>	Likes: <%=album.likes %></p>
+			<br>
 	</div>
+	<% count += 1 %>
 
 <% end %>
 </div>
 
 <div class="section">
 <h2>Top Five <%= link_to 'Songs', songs_path(@songs) %></h2>
-<% @songs.each do |song| %>
-
+<% count = 0 %>
+<% @songs.size > 5 ? max = 5 : max = @songs.size %>
+<% while count < max %>
+	<% song = @songs[count] %>
 	<div class="content">
-		<strong><%= link_to song.name, song_path(song)%></strong><br><br><br>
+		<strong><%= link_to song.name, song_path(song)%></strong>
+		<p>	Likes: <%=song.likes %></p>
+			<br>
 	</div>
+	<% count += 1 %>
 
 <% end %>
 </div>
